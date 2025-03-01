@@ -6,8 +6,8 @@ You can see the example file tree layout, package.json and server.js of the basi
 I will need service.js (the main business logic functional code), controller.js (to handle requests and responses), route.js (using best practice routing), and three ejs views: index.ejs, docs.ejs, and test.ejs. Sometimes I may provide one or more of these files myself. index.ejs should sell the main selling points of the core functions and be the main page. Regarding doc.ejs, this should detail the documentation for the API. Code examples for documentation must be given for Node.js. The documentation is for developers that wish to consume the API, not those that maintain it; info to be covered includes endpoints, example request code, and the expected response. For test.ejs develop a simple page to test the endpoints and show their returns. 
 
 ## NPM Module Instructions:
-If rate limiting is required use the bottleneck module. fetch calls will be done with axios. If a db is required use Mongo DB with Mongoose ORM.
-Error logging is done with the qerrors module: 
+If rate limiting for sending to an external API use the bottleneck module. fetch calls will be done with axios. If a db is required use Mongo DB with Mongoose ORM.
+Error logging is done with the qerrors npm module: 
 const { qerrors } = require('qerrors');
 // Example of using qerrors as Express middleware:
 app.use((err, req, res, next) => {
@@ -54,12 +54,12 @@ Strings in javascript will be written with ` as opposed to ' or  ", this is so i
 When writing code or functions to interact with an API you will write as generic as possible to be able to accept different parameters which enable all functions for use with a given endpoint.
 When writing/refactoring code, prefer the smallest practical number of lines, combining similar branches with concise checks (e.g., using includes() where sensible). Avoid excessive helpers unless they remove repetition. Keep functionality in a single function if possible, & unify success/failure logic within a single block rather than duplicating it.
 Function & Variable Naming Conventions:
-Function & variable names should be no more than two words combined to describe their use; if one or both words can be abbreviated do so, & use js camelCase ( a directory array variable could be "dirArr").
+Function & variable names should be no more than two words (preferably 1-2 syllable word) combined to describe their use; if one or both words can be abbreviated do so, & use js camelCase ( a directory array variable could be "dirArr").
 A function's name should consist of an action & a noun, action first, to say what it does, not what it is a doer of, so in example: "sendEmail", not "emailSender".
 A variable's name should consist of two relevant words, the first describing context of use, & the second what it is.
 
 ## External API Use
-Certain APIs are used for certain functionality instead of building it all over ourselves again. The functionality provided by these APIs must be integrated into the API we are building. First and foremost is the Webway API Gateway. Here is it's documentation:
+Certain APIs are used for certain functionality instead of building it all over ourselves again. The functionality provided by these APIs must be integrated into the API we are building. First and foremost is the Webway API Gateway. Make use of it, here is it's documentation:
 
 
 # Webway API Gateway
