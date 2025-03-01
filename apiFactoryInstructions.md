@@ -188,20 +188,6 @@ const webwayApiKey = response.data.apiKey;
 - **Security**: External API credentials never directly exposed to clients
 - **Monitoring**: All API traffic is logged and can be monitored through Webway's admin dashboard
 
-## Dashboard
-
-Access the admin dashboard to view real-time API usage statistics and manage your API keys.
-
-## Getting Started
-
-1. Visit the [Webway homepage](https://webway.use-api.com)
-2. Generate an API key for your target API
-3. Integrate the Webway API into your application using the examples above
-4. Monitor your API usage through the admin dashboard
-
-## License
-
-ISC
 
 
 
